@@ -1,109 +1,114 @@
-# Student Profile App (Flutter)
+<div align="center">
 
-A Student Profile Screen built for the ZenvyroLabs App Development
-Internship task, using `MaterialApp`, `Scaffold`, `AppBar`, `Column`,
-`Row`, `Container`, `CircleAvatar`, `Text`, `Icon`, `ElevatedButton`,
-`Padding`, and `SizedBox`.
+# 🎓 Student Profile App
 
-This zip includes a full Android project (the `android/` folder, Gradle
-files, manifest, launcher icons, etc.) so you can open it directly in
-Android Studio — you do **not** need to run `flutter create` yourself.
+### A clean, minimal Student Profile Screen built with Flutter
 
-## Before you open it: two one-time things Android Studio needs
+<p>
+  <img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white" />
+  <img src="https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white" />
+  <img src="https://img.shields.io/badge/Platform-Android-3DDC84?style=for-the-badge&logo=android&logoColor=white" />
+  <img src="https://img.shields.io/badge/status-completed-brightgreen?style=for-the-badge" />
+</p>
 
-These two files are always machine-specific, so no zip (from me or anyone
-else) can ship them pre-filled — Android Studio creates/fixes them
-automatically the first time you open the project, as long as the
-**Flutter** and **Dart** plugins are installed in Android Studio.
+</div>
 
-1. **`android/local.properties`** — points to your local Android SDK and
-   Flutter SDK paths. Android Studio writes this file for you on first
-   sync. If it doesn't, create `android/local.properties` yourself:
-   ```
-   sdk.dir=/path/to/your/Android/sdk
-   flutter.sdk=/path/to/your/flutter
-   ```
-2. **Gradle wrapper jar** — if Android Studio shows a "wrapper jar
-   missing/corrupt" prompt during sync, click **"Try Again"** / **"OK"**
-   when it offers to regenerate it (it does this automatically). If it
-   doesn't prompt, open a terminal in `android/` and run `gradle wrapper`
-   once (requires Gradle installed), or simplest of all: run
-   `flutter pub get` from the project root first — that alone fixes it
-   in most cases.
+---
 
-## Step-by-step: open and run in Android Studio
+## 📱 About
 
-1. **Install prerequisites** (skip anything you already have):
-   - [Flutter SDK](https://docs.flutter.dev/get-started/install)
-   - [Android Studio](https://developer.android.com/studio) with the
-     **Flutter** and **Dart** plugins (Settings → Plugins → search
-     "Flutter", install — it pulls in Dart automatically).
-   - Run `flutter doctor` in a terminal and resolve any items it flags.
+This project was built as part of the **ZenvyroLabs App Development
+Internship** — a hands-on exercise in Flutter widgets, layout design, and
+clean UI practices. It renders a Student Profile Screen with a profile
+picture, personal/academic details, an "About Me" section, and an edit
+action, all built from core Flutter widgets (no external UI kits).
 
-2. **Unzip** `student_profile_app.zip` anywhere on your computer.
+<!--
+  📸 Add a screenshot of the running app here once you have one:
+  ![App Screenshot](assets/images/screenshot.png)
+-->
 
-3. **Open in Android Studio**:
-   - Android Studio → **File → Open** → select the unzipped
-     `student_profile_app` folder → **OK**.
-   - Wait for "Gradle sync" / "Indexing" to finish (bottom status bar).
-     First sync can take a few minutes since Gradle downloads
-     dependencies.
+## ✨ Features
 
-4. **Get Flutter packages** — Android Studio usually does this
-   automatically on open. If not: open the terminal panel in Android
-   Studio (or a regular terminal, `cd` into the project) and run:
-   ```
-   flutter pub get
-   ```
+- 🖼️ Circular profile picture (`CircleAvatar`)
+- 🪪 Full name, university, department, and semester display
+- 📧 Email and phone contact info with icons
+- 📝 "About Me" bio section
+- ✏️ "Edit Profile" action button
+- 📐 Clean spacing, alignment, and card-based layout
+- 📱 Responsive, scrollable single-screen design
 
-5. **Pick a device**: at the top toolbar, open the device dropdown and
-   either select a running emulator (Android Studio → Device Manager to
-   create one) or plug in a physical Android phone with USB debugging
-   enabled.
+## 🛠️ Built With
 
-6. **Run it**: click the green ▶️ Run button, or from a terminal:
-   ```
-   flutter run
-   ```
+| Widget | Purpose |
+|---|---|
+| `MaterialApp` / `Scaffold` | App shell and screen structure |
+| `AppBar` | Top title bar |
+| `Column` / `Row` | Layout arrangement |
+| `Container` | Cards, spacing, decoration |
+| `CircleAvatar` | Profile picture |
+| `Text` / `Icon` | Content and visual cues |
+| `ElevatedButton` | Edit Profile action |
+| `Padding` / `SizedBox` | Spacing and alignment |
 
-7. **Push to GitHub**:
-   ```
-   git init
-   git add .
-   git commit -m "Student Profile Screen - Flutter internship task"
-   git branch -M main
-   git remote add origin <your-empty-github-repo-url>
-   git push -u origin main
-   ```
+## 🚀 Getting Started
 
-## If Gradle sync complains about versions
+### Prerequisites
+- [Flutter SDK](https://docs.flutter.dev/get-started/install)
+- [Android Studio](https://developer.android.com/studio) with the Flutter
+  and Dart plugins installed
 
-This project targets Android Gradle Plugin 8.1.0, Kotlin 1.9.10, and
-Gradle 8.3, which work with recent Flutter/Android Studio releases. If
-your installed Android Studio is older and Gradle sync fails on a version
-mismatch, the fastest fix is to run this from inside the project folder:
+### Run it locally
+
+```bash
+git clone https://github.com/<your-username>/<your-repo-name>.git
+cd <your-repo-name>
+flutter pub get
+flutter run
 ```
-flutter create .
+
+Or open the project folder directly in Android Studio, let Gradle sync
+finish, pick a device/emulator, and hit ▶️ Run.
+
+## 📂 Project Structure
+
 ```
-This regenerates `android/` (and adds `ios/`, `web/`, etc.) using version
-numbers matched to *your* installed Flutter SDK, without touching
-`lib/main.dart` or `pubspec.yaml`.
+student_profile_app/
+├── android/              # Android platform project
+├── assets/images/        # Local image assets (profile picture, etc.)
+├── lib/
+│   └── main.dart         # Student Profile Screen UI
+├── pubspec.yaml           # Dependencies & asset config
+└── README.md
+```
 
-## Notes
+## 🖊️ Customize
 
-- The profile picture uses a network placeholder image
-  (`https://i.pravatar.cc/300`) via `CircleAvatar` + `NetworkImage`, so
-  the device/emulator needs internet access when the app runs. To use a
-  local image instead:
-  1. Put an image at `assets/images/profile.jpg`.
-  2. In `pubspec.yaml`, uncomment the `assets:` section.
-  3. In `lib/main.dart`, change `NetworkImage(...)` to
-     `AssetImage('assets/images/profile.jpg')`.
-- All sample data (name, university, department, etc.) is hardcoded in
-  `lib/main.dart` — edit it to your own details before submitting.
-- The "Edit Profile" button currently shows a SnackBar as a placeholder
-  action.
-- Only the Android platform folder is included (per your internship
-  task, which asks for an Android Studio project). If you also need iOS
-  or web later, run `flutter create .` in the project folder to add
-  those platform folders too.
+All profile info (name, university, department, contact details, bio) is
+defined directly in `lib/main.dart` — update the values there to make it
+your own. To swap the profile photo for a local image, see the
+`assets:` section in `pubspec.yaml` and the `CircleAvatar` widget in
+`main.dart`.
+
+## 👤 Author
+
+**Muhammad Abdullah Abrar**
+
+📧 [mabdullahabrar21@gmail.com](mailto:mabdullahabrar21@gmail.com)
+
+<p>
+  <a href="mailto:mabdullahabrar21@gmail.com">
+    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
+  </a>
+</p>
+
+## 📄 License
+
+This project was created for educational purposes as part of an
+internship task. Feel free to fork and build on it.
+
+---
+
+<div align="center">
+Made with 💙 and Flutter
+</div>
